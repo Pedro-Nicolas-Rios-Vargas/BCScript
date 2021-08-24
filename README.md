@@ -14,3 +14,7 @@ $py Bar_Code_Script {{ barcode }}
 
 Donde *barcode* es el código especial de la aplicación scanner donde insertará
 el código de barras leído.
+
+## OJO
+
+Debes haber un server-socket corriendo en el computador con el mismo puerto que el cliente dentro de [cliente.py](https://github.com/Pedro-Nicolas-Rios-Vargas/BCScript/blob/main/Bar_Code_Socket_Script/cliente/client.py).
