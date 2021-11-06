@@ -19,7 +19,10 @@ class ServerSocket:
             # If another socket are bound to the same address that this socket
             # gonna use, the old socket just go to BLOCKING MODE and let this
             # socket use the address. 👍
-            server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
+            try:
+                server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            except Exception:
+                pass
             server.bind((HOST, PORT))
             print(f'\nconectado al host: { HOST }')
             print(f'conectado al puerto: { PORT }\n')
